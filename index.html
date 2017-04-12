@@ -1,0 +1,150 @@
+<!doctype html>
+<html ng-app="demo">
+  <head>
+    <title>PRUEVAA</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="app.js"></script>
+      <style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;    
+}
+</style>
+  </head>
+
+  <body>
+
+
+
+    <div ng-controller="albums">
+ 
+   
+     <div ng-view></div>
+
+     
+                    <br>
+                    <form>
+<table>
+                    <tr>
+                    <th>ID</th>
+                    <th>User Id</th>
+                    <th> Title </th>
+                    <th> Agregar</th>
+                    </tr>
+
+                    <tr>
+                    <td><input type="text" ng-model="id"></td>
+                    <td><input type="text" ng-model="userId"></td>
+                   <td><input type="text" ng-model="title"></td>
+                   <td><button type="button" ng-model="title" ng-click="postdata(); add()">AGREGAR</button></td>
+
+                    </tr>
+
+                    </form>
+</table>  <br>
+                    <table>
+        <tr>
+          <th>ID</th>
+          <th>idUsuario</th>
+          <th>Titulo de Album</th>
+          
+       
+        </tr>
+              <tr ng-repeat="album in albums">
+                    <td>{{ album.id  }}</td>
+                    <td>{{ album.userId }}</td>
+                    <td >{{ album.title }}</td>
+                    <td>
+          <span ng-click="edit($index)" ng-hide="users.editable">Edit</span>
+          <span ng-click="save($index)" ng-show="users.editable">Save</span>
+          <span ng-click="deletedata(album.id)"> | Delete</span>
+        </td>
+                    </tr>
+                    </table>  
+                    <p>Output Message : {{msg}}</p>
+<p>StatusCode: {{statusval}}</p>
+<p>Status: {{statustext}}</p>
+<p>Response Headers: {{headers}}</p>
+      
+      <!-- <table>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Direccion</th>
+          <th>Correo</th>
+          <th>Telefono</th>
+          <th>WebSite</th>
+          <th>Compania</th>
+          <td><span ng-click="add()">Add New</span></td>
+       
+        </tr>
+              <tr ng-repeat="x in users">
+                    <td>{{ x.id }}</td>
+                    <td>
+          <input type="text" ng-model="users.name" ng-show="users.editable">
+          <span ng-hide="users.editable">{{ x.name }}</span>
+        </td>
+                    
+                    <td >{{ x.address.street }}</td>
+                    <td>{{ x.email }}</td>
+                    <td>{{ x.phone }}</td>
+                    <td>{{ x.website }}</td>
+                    <td>{{ x.company.name }}</td>
+                    <td>
+          <span ng-click="edit($index)" ng-hide="users.editable">Edit</span>
+          <span ng-click="save($index)" ng-show="users.editable">Save</span>
+          <span ng-click="delete($index)"> | Delete</span>
+        </td>
+                    </tr>
+                    </table>
+                    <br>
+
+                    <table>
+        <tr>
+          <th>ID</th>
+          <th>idUsuario</th>
+          <th>Titulo de Album</th>
+          
+       
+        </tr>
+              <tr ng-repeat="album in albums">
+                    <td>{{ album.id }}</td>
+                    <td>{{ album.userId }}</td>
+                    <td >{{ album.title }}</td>
+                    </tr>
+                    </table>
+
+                    <br>
+
+                    <table>
+        <tr>
+          <th>ID</th>
+          <th>Titulo</th>
+          <th>Foto</th>
+          <th>Titulo de Album</th>
+          
+       
+        </tr>
+              <tr ng-repeat="photo in photos">
+                    <td>{{ photo.id }}</td>
+                    <td>{{ photo.title }}</td>
+                    <td ><img src="{{ photo.thumbnailUrl }}" alt="Description"/></td>
+                    <td >{{ photo.thumbnailUrl }}</td>
+                    </tr>
+                    </table> -->
+
+                  
+                      
+                      
+      
+
+
+    </div>
+
+  </body>
+</html>
